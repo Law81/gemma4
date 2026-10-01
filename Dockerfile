@@ -4,6 +4,10 @@ FROM ghcr.io/astral-sh/uv:latest AS uv-bin
 # --- Étape 2 : Image finale Python légère ---
 FROM python:3.11-slim
 
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends gcc libc6-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 # Copie du binaire 'uv' depuis la première étape dans le PATH du conteneur
 COPY --from=uv-bin /uv /uvx /bin/
 

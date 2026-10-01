@@ -14,4 +14,11 @@ services:
       - WATCHFILES_FORCE_POLLING=true # Utile pour le rechargement automatique (hot-reload)
     extra_hosts:
       - "host.docker.internal:host-gateway"
-    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    restart: no

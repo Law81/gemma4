@@ -1,7 +1,9 @@
-polars
-scikit-learn
+accelerate
+bitsandbytes
 matplotlib
 numpy
-transformers
+polars
+scikit-learn
 torch
-accelerate
+torchvision
+transformers

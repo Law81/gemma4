@@ -42,6 +42,11 @@ uv sync
 
 ## Docker
 
+To avoid Hugging Face Hub rate limits, create a read token in your Hugging Face
+account, copy `.env.example` to `.env`, and replace the placeholder with your
+token. Docker Compose passes `HF_TOKEN` to the application automatically. Keep
+`.env` private; it is excluded from Git.
+
 Build and run the production-style image:
 
 ```powershell
