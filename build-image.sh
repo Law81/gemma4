@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -eu
 
-IMAGE_NAME="${IMAGE_NAME:-echequier}"
+IMAGE_NAME="${IMAGE_NAME:-emploi}"
 IMAGE_TAG="${IMAGE_TAG:-latest}"
 BUILD_CONTEXT="${BUILD_CONTEXT:-.}"
 DOCKERFILE="${DOCKERFILE:-Dockerfile}"

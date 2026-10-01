@@ -2,3 +2,6 @@ polars
 scikit-learn
 matplotlib
 numpy
+transformers
+torch
+accelerate

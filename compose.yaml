@@ -1,11 +1,17 @@
 services:
-  python-app:
+  app:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
       - ./src:/app/src
+    container_name: python_gemma_app
+    ports:
+      - "8000:8000"
     env_file:
       - .env
     environment:
       - WATCHFILES_FORCE_POLLING=true # Utile pour le rechargement automatique (hot-reload)
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
